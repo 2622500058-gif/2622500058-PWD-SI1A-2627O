@@ -1,0 +1,103 @@
+/* Universal Selector & Box-Sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* Base Styles (Tampilan Mobile) */
+body {
+    margin: 0;
+    padding: 12px;
+    font-family: Arial, sans-serif;
+    color: #111827;
+    background-color: #eef2f7;
+}
+
+header {
+    background-color: #003366;
+    color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #00264d;
+}
+
+header h1 {
+    margin: 0 0 16px;
+    font-size: 28px;
+}
+
+section {
+    width: 100%;
+}
+
+/* Flexbox Navigasi (Menurun di Mobile) */
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Grid Layout Utama (1 Kolom di Mobile) */
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+#home, #about, #contact {
+    background-color: #ffffff;
+    border: 1px solid #d0d7de;
+    padding: 20px;
+    margin: 0;
+}
+
+#home h2 {
+    color: #003366;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 6px;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+#home p { line-height: 1.6; margin: 0 0 16px; }
+#home img { display: block; width: 240px; max-width: 100%; height: auto; border: 1px solid #cbd5e1; }
+
+.form-group { margin-bottom: 12px; }
+.input-form { width: 100%; padding: 8px; margin: 4px 0; border: 1px solid #94a3b8; font-size: 16px; }
+#contact textarea { min-height: 80px; resize: vertical; }
+#contact button { cursor: pointer; font-weight: bold; background-color: #003366; color: #ffffff; padding: 8px 14px; border: 1px solid #00264d; }
+
+footer {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 20px;
+    margin-top: 20px;
+    border: 1px solid #00264d;
+}
+
+footer p { margin: 0; }
+
+/* Media Query (Tampilan Desktop Layar Lebar >= 768px) */
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: 1fr 1fr; /* Berubah jadi 2 kolom berdampingan */
+    }
+    nav ul {
+        flex-direction: row; /* Navigasi berderet ke samping */
+        gap: 16px;
+    }
+    #contact {
+        grid-column: 1 / -1; /* Kontak memanjang penuh di bawah */
+    }
+}
